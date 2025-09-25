@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookAPI - Letras Vivas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 p-6">
+
+<div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center">
+        <i class="fas fa-book-open text-blue-600"></i> BookAPI - Letras Vivas
+    </h1>
+
+    <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">Agregar libro</h2>
+        <form id="bookForm" class="space-y-4">
+            <input type="text" id="title" placeholder="Título" required class="w-full p-2 border rounded">
+            <input type="text" id="author" placeholder="Autor" required class="w-full p-2 border rounded">
+            <input type="number" id="year" placeholder="Año" required class="w-full p-2 border rounded">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <i class="fas fa-plus-circle"></i> Agregar
+            </button>
+        </form>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2" >Buscar libros</h2>
+        <div class="flex space-x-2">
+            <input type="text" id="search" placeholder="Buscar por título" class="flex-1 p-2 border rounded">
+            <button onclick="searchBooks()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4" id="result-books" >Todos los libros</h2>
+        <ul id="bookList" class="space-y-3"></ul>
+    </section>
+</div>
+
+<script src="js/ApiBook.js" ></script>
+</body>
+</html>
